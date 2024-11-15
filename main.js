@@ -80,6 +80,7 @@ tgBot.on('polling_error', (error) => {
 
 tgBot.on('message', (msg) => {
     const text = msg.text;
+    currentChatId = msg.chat.id;
     chatId = msg.chat.id;
     if (text.startsWith('/chat ')) {
         const messageToSend = text.slice(6);  // Получаем текст после /chat
